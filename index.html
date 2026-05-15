@@ -66,6 +66,43 @@
   .stat-pill .sl{font-size:clamp(.65rem,1.8vw,.72rem);color:rgba(255,255,255,.4)}
   .welcome .footer{margin-top:1.3rem;font-size:.7rem;color:rgba(255,255,255,.3)}
 
+  /* LEAD FORM */
+  .lead-form{display:flex;flex-direction:column;gap:.55rem;max-width:280px;width:90%;margin:.2rem auto 0}
+  .lead-form input{padding:.75rem 1rem;border-radius:14px;border:2px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.06);color:#fff;font-family:'Source Sans 3',sans-serif;
+    font-size:clamp(.95rem,2.8vw,1.05rem);outline:none;transition:border-color .2s,background .2s}
+  .lead-form input::placeholder{color:rgba(255,255,255,.4)}
+  .lead-form input:focus{border-color:#F4D35E;background:rgba(255,255,255,.1)}
+  .lead-form .lead-hint{font-size:.7rem;color:rgba(255,255,255,.35);text-align:center;margin-top:-.1rem}
+  .lead-form .btn-play{margin-top:.4rem;padding:.85rem 2rem;font-size:clamp(1.05rem,3.2vw,1.2rem)}
+
+  /* ADMIN */
+  .admin-fab{position:absolute;bottom:50px;right:8px;width:26px;height:26px;border-radius:50%;
+    border:none;background:rgba(255,255,255,.04);color:rgba(255,255,255,.25);font-size:13px;
+    cursor:pointer;z-index:30;display:flex;align-items:center;justify-content:center}
+  .admin-fab:active{transform:scale(.9)}
+  .admin-modal{position:absolute;inset:0;background:rgba(15,22,40,.96);z-index:40;
+    display:none;flex-direction:column;padding:1.5rem 1.1rem;overflow-y:auto;border-radius:40px}
+  .admin-modal.open{display:flex;animation:fadeIn .25s ease}
+  .admin-modal h2{font-family:'Playfair Display',serif;color:#F4D35E;font-size:1.25rem;margin-bottom:.4rem;text-align:center}
+  .admin-count{text-align:center;color:#e0d5c1;font-size:.95rem;margin-bottom:.9rem}
+  .admin-count .num{color:#F4D35E;font-weight:700;font-size:1.4rem}
+  .admin-list{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+    border-radius:12px;padding:.65rem .8rem;max-height:200px;overflow-y:auto;margin-bottom:1rem;font-size:.82rem;color:#cfd8e3;line-height:1.5}
+  .admin-list .li{padding:.25rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
+  .admin-list .li:last-child{border-bottom:none}
+  .admin-list .nm{color:#fff;font-weight:600}
+  .admin-list .ph{color:#9BF0A0}
+  .admin-list .empty{color:rgba(255,255,255,.4);text-align:center;padding:.8rem 0}
+  .admin-actions{display:flex;flex-direction:column;gap:.55rem}
+  .admin-btn{padding:.8rem 1rem;border-radius:14px;border:none;font-family:'Source Sans 3',sans-serif;
+    font-weight:700;font-size:.98rem;cursor:pointer;color:#fff;text-align:center}
+  .admin-btn.wa{background:linear-gradient(135deg,#25D366,#128C7E)}
+  .admin-btn.csv{background:linear-gradient(135deg,#7EC8E3,#2E86AB)}
+  .admin-btn.clr{background:rgba(231,76,60,.15);color:#ff8a80;border:1.5px solid rgba(231,76,60,.4)}
+  .admin-btn.close{background:transparent;color:rgba(255,255,255,.5);border:1.5px solid rgba(255,255,255,.15);margin-top:.4rem}
+  .admin-btn:active{transform:scale(.97)}
+
   /* QUIZ */
   .quiz{padding-top:2.2rem}
   .progress-row{display:flex;justify-content:space-between;font-size:clamp(.78rem,2.2vw,.88rem);color:rgba(255,255,255,.5);margin-bottom:.35rem}
@@ -198,7 +235,12 @@
           <div class="tagline">Quiz Tech • SENAC Tech</div>
           <p class="subtitle">Teste seus conhecimentos digitais, aprenda e se divirta!<br><span>Leva só 2 minutinhos ☕</span></p>
           <div class="version-sel" id="ver-sel"></div>
-          <button class="btn-play" onclick="startQuiz()">Vamos jogar! 🎉</button>
+          <form class="lead-form" onsubmit="submitLead(event)">
+            <input type="text" id="lead-name" placeholder="Seu nome" required minlength="2" maxlength="60" autocomplete="name">
+            <input type="tel" id="lead-phone" placeholder="(51) 99999-9999" required inputmode="tel" maxlength="16" autocomplete="tel">
+            <button type="submit" class="btn-play">Vamos jogar! 🎉</button>
+            <p class="lead-hint">Seus dados ficam s&oacute; no SENAC. Sem spam.</p>
+          </form>
           <div class="stats-row">
             <div class="stat-pill"><div class="sn" id="st-played">0</div><div class="sl">partidas</div></div>
             <div class="stat-pill"><div class="sn" id="st-avg">—</div><div class="sl">média acertos</div></div>
@@ -237,6 +279,18 @@
           <button class="btn-back" onclick="go('result')">← Voltar</button>
         </div>
 
+      </div>
+      <button type="button" class="admin-fab" onclick="openAdmin()" title="Admin">&#9881;</button>
+      <div id="admin-modal" class="admin-modal">
+        <h2>Leads cadastrados</h2>
+        <div class="admin-count"><span class="num" id="admin-num">0</span> participantes</div>
+        <div class="admin-list" id="admin-list"></div>
+        <div class="admin-actions">
+          <button type="button" class="admin-btn wa" onclick="sendLeadsWA()">&#128241; Enviar todos via WhatsApp</button>
+          <button type="button" class="admin-btn csv" onclick="downloadLeadsCSV()">&#128190; Baixar CSV</button>
+          <button type="button" class="admin-btn clr" onclick="clearLeads()">&#128465; Apagar tudo</button>
+          <button type="button" class="admin-btn close" onclick="closeAdmin()">Fechar</button>
+        </div>
       </div>
       <div class="phone-navbar"><span>⌂</span><span>🔍</span><span>⊕</span><span>📅</span><span>👤</span></div>
     </div>
@@ -402,6 +456,82 @@ function renderCert(){
   document.getElementById('cert-sc').textContent='Acertou '+ts+' de '+tt+' desafios';
   document.getElementById('cert-date').textContent=new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
   document.getElementById('cert-qr').src=QR_SRC;
+}
+
+/* ===== LEADS (cadastro de participantes) ===== */
+const ADMIN_PHONE="5551981418383";
+const ADMIN_PIN="8383";
+const LEADS_KEY="mc-leads-v1";
+
+function loadLeads(){try{return JSON.parse(localStorage.getItem(LEADS_KEY))||[];}catch(e){return[];}}
+function saveLeads(arr){try{localStorage.setItem(LEADS_KEY,JSON.stringify(arr));}catch(e){}}
+
+function maskPhone(v){
+  const d=v.replace(/\D/g,'').slice(0,11);
+  if(d.length<=2)return d.length?'('+d:'';
+  if(d.length<=6)return '('+d.slice(0,2)+') '+d.slice(2);
+  if(d.length<=10)return '('+d.slice(0,2)+') '+d.slice(2,6)+'-'+d.slice(6);
+  return '('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7);
+}
+document.getElementById('lead-phone').addEventListener('input',function(e){e.target.value=maskPhone(e.target.value);});
+
+function submitLead(ev){
+  ev.preventDefault();
+  const name=document.getElementById('lead-name').value.trim();
+  const phoneRaw=document.getElementById('lead-phone').value.replace(/\D/g,'');
+  if(name.length<2){alert('Por favor, informe seu nome.');return false;}
+  if(phoneRaw.length<10){alert('Celular precisa ter DDD + número (10 ou 11 dígitos).');return false;}
+  const leads=loadLeads();
+  leads.push({n:name,c:phoneRaw,t:new Date().toISOString()});
+  saveLeads(leads);
+  startQuiz();
+  return false;
+}
+
+function openAdmin(){
+  const pin=prompt('PIN admin:');
+  if(pin!==ADMIN_PIN)return;
+  renderAdmin();
+  document.getElementById('admin-modal').classList.add('open');
+}
+function closeAdmin(){document.getElementById('admin-modal').classList.remove('open');}
+
+function renderAdmin(){
+  const leads=loadLeads();
+  document.getElementById('admin-num').textContent=leads.length;
+  const list=document.getElementById('admin-list');
+  if(!leads.length){list.innerHTML='<div class="empty">Nenhum lead ainda.</div>';return;}
+  list.innerHTML=leads.map((l,i)=>'<div class="li"><span class="nm">'+(i+1)+'. '+escapeHtml(l.n)+'</span> &middot; <span class="ph">'+fmtPhone(l.c)+'</span></div>').join('');
+}
+
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function fmtPhone(d){if(d.length===11)return '('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7);if(d.length===10)return '('+d.slice(0,2)+') '+d.slice(2,6)+'-'+d.slice(6);return d;}
+
+function sendLeadsWA(){
+  const leads=loadLeads();
+  if(!leads.length){alert('Nenhum lead para enviar.');return;}
+  const date=new Date().toLocaleDateString('pt-BR');
+  let txt='*Leads - Memórias Conectadas*\n'+date+' - Semana S Redenção\n\n';
+  leads.forEach((l,i)=>{txt+=(i+1)+'. '+l.n+' - '+fmtPhone(l.c)+'\n';});
+  txt+='\nTotal: '+leads.length+' participantes';
+  window.open('https://wa.me/'+ADMIN_PHONE+'?text='+encodeURIComponent(txt),'_blank');
+}
+
+function downloadLeadsCSV(){
+  const leads=loadLeads();
+  if(!leads.length){alert('Nenhum lead para exportar.');return;}
+  let csv='nome,celular,data\n';
+  leads.forEach(l=>{csv+='"'+l.n.replace(/"/g,'""')+'","'+fmtPhone(l.c)+'","'+l.t+'"\n';});
+  const blob=new Blob(['﻿'+csv],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='leads-memorias-conectadas-'+new Date().toISOString().slice(0,10)+'.csv';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+
+function clearLeads(){
+  if(!confirm('Apagar TODOS os leads? Esta ação não pode ser desfeita.'))return;
+  saveLeads([]);renderAdmin();
 }
 </script>
 </body>
