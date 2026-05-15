@@ -363,6 +363,7 @@ function go(id){
   const el=document.getElementById('s-'+id);el.classList.add('active');el.offsetHeight;el.classList.add('anim-in');
   document.querySelector('.phone-content').scrollTop=0;
   if(id==='cert')renderCert();
+  if(id==='welcome'){const n=document.getElementById('lead-name'),p=document.getElementById('lead-phone');if(n)n.value='';if(p)p.value='';}
 }
 
 function startQuiz(){
