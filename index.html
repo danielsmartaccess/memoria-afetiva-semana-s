@@ -16,7 +16,8 @@
   .hill{position:absolute;bottom:0;border-radius:50% 50% 0 0/40% 40% 0 0}
   .h1{width:120%;height:30%;left:-10%;background:#7ab542;opacity:.7}
   .h2{width:100%;height:22%;left:5%;background:#6aaa45;opacity:.85}
-  .phone{position:relative;z-index:10;width:min(420px,88vw);height:min(840px,94vh);
+
+  .phone{position:relative;z-index:10;width:min(440px,90vw);height:min(860px,95vh);
     border-radius:48px;background:#111;padding:10px;
     box-shadow:0 30px 100px rgba(0,0,0,.45),inset 0 0 0 2px #333}
   .phone-notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:90px;height:20px;background:#111;border-radius:0 0 14px 14px;z-index:20}
@@ -33,57 +34,56 @@
 
   .screen{display:none;flex-direction:column;min-height:100%;
     background:linear-gradient(160deg,#1a1a2e 0%,#16213e 40%,#0f3460 100%);
-    padding:2.5rem 1.2rem 3.5rem}
+    padding:2rem 1.3rem 3.5rem}
   .screen.active{display:flex}
   @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
   @keyframes popIn{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
   @keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
   @keyframes glow{0%,100%{box-shadow:0 0 16px rgba(244,211,94,.2)}50%{box-shadow:0 0 36px rgba(244,211,94,.45)}}
-  @keyframes barGrow{from{width:0}to{width:var(--bar-w)}}
   .anim-in{animation:fadeIn .5s ease}
 
   /* WELCOME */
   .welcome{align-items:center;justify-content:center;text-align:center}
-  .welcome-emoji{font-size:3.2rem;animation:float 3s ease-in-out infinite;margin-bottom:.3rem}
-  .welcome h1{font-family:'Playfair Display',Georgia,serif;font-size:2rem;color:#F4D35E;line-height:1.1;font-weight:800}
-  .welcome .tagline{font-size:.8rem;color:#EE964B;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:.25rem 0 .5rem}
-  .welcome .subtitle{font-size:.92rem;color:#e0d5c1;max-width:280px;line-height:1.5;margin-bottom:.8rem}
+  .welcome-emoji{font-size:3.8rem;animation:float 3s ease-in-out infinite;margin-bottom:.4rem}
+  .welcome h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.2rem,6vw,2.6rem);color:#F4D35E;line-height:1.1;font-weight:800}
+  .welcome .tagline{font-size:clamp(.85rem,2.5vw,.95rem);color:#EE964B;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin:.3rem 0 .6rem}
+  .welcome .subtitle{font-size:clamp(1.05rem,3vw,1.15rem);color:#e0d5c1;max-width:310px;line-height:1.5;margin-bottom:.9rem}
   .welcome .subtitle span{opacity:.6;font-size:.9em}
-  .version-sel{display:flex;gap:.4rem;margin-bottom:1.2rem;flex-wrap:wrap;justify-content:center}
-  .v-btn{padding:.45rem .9rem;border-radius:20px;border:2px solid rgba(255,255,255,.15);
+  .version-sel{display:flex;gap:.5rem;margin-bottom:1.3rem;flex-wrap:wrap;justify-content:center}
+  .v-btn{padding:.5rem 1rem;border-radius:20px;border:2px solid rgba(255,255,255,.15);
     background:rgba(255,255,255,.05);color:#e0d5c1;font-family:'Source Sans 3',sans-serif;
-    font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s}
+    font-size:clamp(.85rem,2.5vw,.95rem);font-weight:600;cursor:pointer;transition:all .2s}
   .v-btn.sel{border-color:#F4D35E;background:rgba(244,211,94,.15);color:#F4D35E}
-  .btn-play{font-family:'Source Sans 3',sans-serif;font-size:1.15rem;font-weight:700;
-    padding:.85rem 2.2rem;border-radius:60px;border:none;
+  .btn-play{font-family:'Source Sans 3',sans-serif;font-size:clamp(1.2rem,3.5vw,1.35rem);font-weight:700;
+    padding:1rem 2.5rem;border-radius:60px;border:none;
     background:linear-gradient(135deg,#F4D35E,#EE964B);color:#1a1a2e;
     cursor:pointer;box-shadow:0 6px 24px rgba(244,211,94,.3);animation:glow 3s ease-in-out infinite}
   .btn-play:active{transform:scale(.96)}
-  .stats-row{display:flex;gap:.8rem;margin-top:1.2rem;flex-wrap:wrap;justify-content:center}
-  .stat-pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
-    border-radius:12px;padding:.4rem .8rem;text-align:center}
-  .stat-pill .sn{font-size:1.1rem;font-weight:700;color:#F4D35E}
-  .stat-pill .sl{font-size:.6rem;color:rgba(255,255,255,.4)}
-  .welcome .footer{margin-top:1.2rem;font-size:.65rem;color:rgba(255,255,255,.3)}
+  .stats-row{display:flex;gap:1rem;margin-top:1.3rem;flex-wrap:wrap;justify-content:center}
+  .stat-pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:.5rem 1rem;text-align:center}
+  .stat-pill .sn{font-size:clamp(1.2rem,3vw,1.4rem);font-weight:700;color:#F4D35E}
+  .stat-pill .sl{font-size:clamp(.65rem,1.8vw,.72rem);color:rgba(255,255,255,.4)}
+  .welcome .footer{margin-top:1.3rem;font-size:.7rem;color:rgba(255,255,255,.3)}
 
   /* QUIZ */
-  .quiz{padding-top:2rem}
-  .progress-row{display:flex;justify-content:space-between;font-size:.72rem;color:rgba(255,255,255,.5);margin-bottom:.3rem}
-  .progress-track{height:6px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
-  .progress-fill{height:100%;background:linear-gradient(90deg,#F4D35E,#EE964B);border-radius:3px;transition:width .5s}
+  .quiz{padding-top:2.2rem}
+  .progress-row{display:flex;justify-content:space-between;font-size:clamp(.78rem,2.2vw,.88rem);color:rgba(255,255,255,.5);margin-bottom:.35rem}
+  .progress-track{height:8px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden}
+  .progress-fill{height:100%;background:linear-gradient(90deg,#F4D35E,#EE964B);border-radius:4px;transition:width .5s}
   .q-area{flex:1;display:flex;flex-direction:column;justify-content:center;transition:opacity .25s}
-  .q-badge{display:inline-block;padding:.18rem .55rem;border-radius:14px;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.35rem}
+  .q-badge{display:inline-block;padding:.22rem .65rem;border-radius:14px;font-size:clamp(.68rem,1.8vw,.75rem);font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;margin-bottom:.4rem}
   .badge-tf{background:rgba(155,240,160,.1);color:#9BF0A0}
   .badge-tech{background:rgba(126,200,227,.1);color:#7EC8E3}
   .badge-poll{background:rgba(244,211,94,.12);color:#F4D35E}
-  .q-emoji{font-size:2.2rem;display:block;margin:.25rem 0}
-  .q-text{font-family:'Playfair Display',serif;font-size:1.05rem;color:#fff;line-height:1.35;font-weight:600;padding:0 .2rem}
+  .q-emoji{font-size:clamp(2.5rem,7vw,3rem);display:block;margin:.3rem 0}
+  .q-text{font-family:'Playfair Display',serif;font-size:clamp(1.15rem,3.5vw,1.35rem);color:#fff;line-height:1.35;font-weight:600;padding:0 .2rem}
 
-  .opts{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem}
-  .opt{padding:.75rem .85rem;border-radius:14px;border:2px solid rgba(255,255,255,.1);
+  .opts{display:flex;flex-direction:column;gap:.55rem;margin-top:1.1rem}
+  .opt{padding:.85rem 1rem;border-radius:14px;border:2px solid rgba(255,255,255,.1);
     background:rgba(255,255,255,.05);color:#e0d5c1;font-family:'Source Sans 3',sans-serif;
-    font-size:.95rem;font-weight:500;cursor:pointer;text-align:left;transition:all .25s}
+    font-size:clamp(1rem,3vw,1.12rem);font-weight:500;cursor:pointer;text-align:left;transition:all .25s}
   .opt:active{transform:scale(.97)}
   .opt.picked{border-color:#F4D35E;background:rgba(244,211,94,.12);color:#F4D35E;font-weight:700}
   .opt.correct{border-color:#4CAF50!important;background:rgba(76,175,80,.15)!important;color:#9BF0A0!important}
@@ -91,88 +91,95 @@
   .opt.right-answer{border-color:rgba(76,175,80,.4);background:rgba(76,175,80,.08);color:rgba(155,240,160,.6)}
   .opt.locked{pointer-events:none}
 
-  .tf-row{display:flex;gap:.6rem;margin-top:1rem}
-  .tf{flex:1;padding:1rem;border-radius:16px;border:2.5px solid rgba(255,255,255,.1);
+  .tf-row{display:flex;gap:.7rem;margin-top:1.1rem}
+  .tf{flex:1;padding:1.1rem;border-radius:18px;border:2.5px solid rgba(255,255,255,.1);
     background:rgba(255,255,255,.04);font-family:'Source Sans 3',sans-serif;
-    font-size:1rem;font-weight:700;cursor:pointer;text-align:center;
-    display:flex;flex-direction:column;align-items:center;gap:.15rem;color:#e0d5c1;transition:all .25s}
+    font-size:clamp(1.05rem,3vw,1.18rem);font-weight:700;cursor:pointer;text-align:center;
+    display:flex;flex-direction:column;align-items:center;gap:.2rem;color:#e0d5c1;transition:all .25s}
   .tf:active{transform:scale(.95)}
-  .tf .tf-icon{font-size:1.6rem}
+  .tf .tf-icon{font-size:clamp(1.8rem,5vw,2.1rem)}
   .tf.locked{pointer-events:none}
   .tf.correct{border-color:#4CAF50!important;background:rgba(76,175,80,.18)!important;color:#9BF0A0!important}
   .tf.wrong{border-color:#E74C3C!important;background:rgba(231,76,60,.15)!important;color:#ff8a80!important}
   .tf.was-right{border-color:rgba(76,175,80,.4);background:rgba(76,175,80,.08);color:rgba(155,240,160,.6)}
 
-  .fb-card{border-radius:16px;padding:1.2rem;text-align:center;animation:slideUp .4s ease;margin-top:.5rem}
+  .fb-card{border-radius:18px;padding:1.3rem;text-align:center;animation:slideUp .4s ease;margin-top:.6rem}
   .fb-card.ok{background:rgba(76,175,80,.1);border:2px solid rgba(76,175,80,.3)}
   .fb-card.nok{background:rgba(238,148,75,.08);border:2px solid rgba(238,148,75,.25)}
-  .fb-emoji{font-size:2rem;margin-bottom:.3rem}
-  .fb-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:.4rem}
+  .fb-emoji{font-size:clamp(2.2rem,6vw,2.6rem);margin-bottom:.35rem}
+  .fb-title{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3.5vw,1.35rem);font-weight:700;margin-bottom:.45rem}
   .fb-card.ok .fb-title{color:#9BF0A0}.fb-card.nok .fb-title{color:#EE964B}
-  .fb-text{font-size:.88rem;color:#e0d5c1;line-height:1.55;margin-bottom:.7rem}
-  .fb-tip{font-size:.76rem;color:rgba(255,255,255,.4);background:rgba(255,255,255,.05);
-    padding:.45rem .65rem;border-radius:10px;line-height:1.4;display:inline-block}
-  .btn-next{font-family:'Source Sans 3',sans-serif;font-size:.95rem;font-weight:700;
-    padding:.7rem 1.5rem;border-radius:60px;border:none;
-    background:linear-gradient(135deg,#7EC8E3,#2E86AB);color:#fff;cursor:pointer;margin-top:.8rem}
+  .fb-text{font-size:clamp(.95rem,2.8vw,1.05rem);color:#e0d5c1;line-height:1.55;margin-bottom:.8rem}
+  .fb-tip{font-size:clamp(.82rem,2.2vw,.9rem);color:rgba(255,255,255,.4);background:rgba(255,255,255,.05);
+    padding:.5rem .75rem;border-radius:12px;line-height:1.4;display:inline-block}
+  .btn-next{font-family:'Source Sans 3',sans-serif;font-size:clamp(1.05rem,3vw,1.15rem);font-weight:700;
+    padding:.8rem 1.8rem;border-radius:60px;border:none;
+    background:linear-gradient(135deg,#7EC8E3,#2E86AB);color:#fff;cursor:pointer;margin-top:.9rem}
   .btn-next:active{transform:scale(.95)}
 
-  .curiosity{text-align:center;padding:1rem .3rem}
-  .curiosity .emoji{font-size:2rem}
-  .curiosity p{font-size:.92rem;color:#e0d5c1;line-height:1.55;margin:.7rem 0 .9rem}
+  .curiosity{text-align:center;padding:1.2rem .3rem}
+  .curiosity .emoji{font-size:clamp(2.2rem,6vw,2.6rem)}
+  .curiosity p{font-size:clamp(1rem,3vw,1.1rem);color:#e0d5c1;line-height:1.55;margin:.8rem 0 1rem}
 
   /* RESULT */
   .result{align-items:center;text-align:center;padding-top:2.5rem!important}
-  .result-emoji{font-size:3rem;animation:popIn .6s ease}
-  .result-sub{color:rgba(255,255,255,.55);font-size:.82rem;margin-top:.3rem}
-  .result h1{font-family:'Playfair Display',serif;font-size:1.4rem;line-height:1.15;font-weight:700;margin:.15rem 0 .3rem}
-  .result-score{display:inline-block;padding:.25rem .8rem;border-radius:20px;font-size:.75rem;font-weight:700;margin-bottom:.5rem}
-  .result-desc{font-size:.88rem;color:#e0d5c1;line-height:1.55;max-width:300px;margin-bottom:.8rem}
+  .result-emoji{font-size:clamp(3.2rem,9vw,3.8rem);animation:popIn .6s ease}
+  .result-sub{color:rgba(255,255,255,.55);font-size:clamp(.9rem,2.5vw,1rem);margin-top:.3rem}
+  .result h1{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4.5vw,1.8rem);line-height:1.15;font-weight:700;margin:.2rem 0 .35rem}
+  .result-score{display:inline-block;padding:.3rem .9rem;border-radius:20px;font-size:clamp(.82rem,2.3vw,.92rem);font-weight:700;margin-bottom:.6rem}
+  .result-desc{font-size:clamp(.95rem,2.8vw,1.05rem);color:#e0d5c1;line-height:1.55;max-width:340px;margin-bottom:1rem}
 
-  /* LIVE POLL */
-  .poll-box{background:rgba(255,255,255,.06);border-radius:14px;padding:.9rem 1rem;
-    max-width:320px;width:100%;border:1px solid rgba(255,255,255,.1);text-align:left;margin-bottom:.8rem}
-  .poll-box .pb-title{font-size:.82rem;color:#F4D35E;font-weight:700;margin-bottom:.6rem;text-align:center}
-  .poll-bar-row{display:flex;align-items:center;gap:.4rem;margin-bottom:.45rem}
-  .poll-label{font-size:.72rem;color:#e0d5c1;width:100px;flex-shrink:0;text-align:right}
-  .poll-track{flex:1;height:18px;background:rgba(255,255,255,.06);border-radius:9px;overflow:hidden;position:relative}
-  .poll-fill{height:100%;border-radius:9px;transition:width .6s ease}
-  .poll-val{font-size:.68rem;color:rgba(255,255,255,.5);width:30px;text-align:right;flex-shrink:0}
-  .poll-total{font-size:.68rem;color:rgba(255,255,255,.35);text-align:center;margin-top:.3rem}
+  .poll-box{background:rgba(255,255,255,.06);border-radius:16px;padding:1rem 1.1rem;
+    max-width:340px;width:100%;border:1px solid rgba(255,255,255,.1);text-align:left;margin-bottom:.9rem}
+  .poll-box .pb-title{font-size:clamp(.88rem,2.5vw,.95rem);color:#F4D35E;font-weight:700;margin-bottom:.65rem;text-align:center}
+  .poll-bar-row{display:flex;align-items:center;gap:.4rem;margin-bottom:.5rem}
+  .poll-label{font-size:clamp(.72rem,2vw,.8rem);color:#e0d5c1;width:95px;flex-shrink:0;text-align:right;line-height:1.2}
+  .poll-track{flex:1;height:20px;background:rgba(255,255,255,.06);border-radius:10px;overflow:hidden}
+  .poll-fill{height:100%;border-radius:10px;transition:width .6s ease}
+  .poll-val{font-size:clamp(.72rem,2vw,.8rem);color:rgba(255,255,255,.5);width:28px;text-align:right;flex-shrink:0}
+  .poll-total{font-size:clamp(.68rem,1.8vw,.75rem);color:rgba(255,255,255,.35);text-align:center;margin-top:.35rem}
 
-  .course-box{background:rgba(255,255,255,.06);border-radius:14px;padding:.9rem 1rem;
-    max-width:320px;width:100%;border:1px solid rgba(255,255,255,.1);text-align:left;margin-bottom:.8rem}
-  .course-box .cb-title{font-size:.85rem;color:#F4D35E;font-weight:700;margin-bottom:.4rem}
-  .course-box .cb-item{font-size:.78rem;color:#e0d5c1;line-height:1.4;padding:.2rem 0 .2rem 1.2rem;position:relative}
+  .course-box{background:rgba(255,255,255,.06);border-radius:16px;padding:1rem 1.1rem;
+    max-width:340px;width:100%;border:1px solid rgba(255,255,255,.1);text-align:left;margin-bottom:.9rem}
+  .course-box .cb-title{font-size:clamp(.92rem,2.6vw,1rem);color:#F4D35E;font-weight:700;margin-bottom:.5rem}
+  .course-box .cb-item{font-size:clamp(.85rem,2.4vw,.92rem);color:#e0d5c1;line-height:1.4;padding:.25rem 0 .25rem 1.3rem;position:relative}
   .course-box .cb-item::before{content:'→';position:absolute;left:0;color:#EE964B;font-weight:700}
-  .btn-cert{font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:700;
-    padding:.75rem 1.5rem;border-radius:60px;border:none;color:#fff;cursor:pointer}
+
+  .senac-cta{background:rgba(244,211,94,.08);border-radius:16px;padding:1rem 1.1rem;
+    max-width:340px;width:100%;border:2px solid rgba(244,211,94,.2);text-align:center;margin-bottom:.9rem}
+  .senac-cta .sc-title{font-size:clamp(1rem,3vw,1.12rem);color:#F4D35E;font-weight:700;margin-bottom:.5rem}
+  .senac-cta .sc-sub{font-size:clamp(.85rem,2.4vw,.92rem);color:#e0d5c1;line-height:1.45;margin-bottom:.7rem}
+  .senac-cta .qr-wrap{display:flex;justify-content:center}
+  .senac-cta .qr-wrap img{width:120px;height:120px;border-radius:10px}
+  .senac-cta .sc-url{font-size:clamp(.72rem,2vw,.78rem);color:rgba(255,255,255,.45);margin-top:.4rem}
+
+  .btn-cert{font-family:'Source Sans 3',sans-serif;font-size:clamp(1.05rem,3vw,1.15rem);font-weight:700;
+    padding:.8rem 1.8rem;border-radius:60px;border:none;color:#fff;cursor:pointer;margin-bottom:.5rem}
   .btn-cert:active{transform:scale(.95)}
-  .btn-restart{font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:600;
-    padding:.4rem 1rem;border-radius:60px;border:2px solid rgba(255,255,255,.12);
+  .btn-restart{font-family:'Source Sans 3',sans-serif;font-size:clamp(.8rem,2.2vw,.88rem);font-weight:600;
+    padding:.5rem 1.2rem;border-radius:60px;border:2px solid rgba(255,255,255,.12);
     background:transparent;color:rgba(255,255,255,.4);cursor:pointer;margin-top:.5rem}
 
   /* CERTIFICATE */
   .certificate{align-items:center;justify-content:center}
-  .cert-card{background:linear-gradient(135deg,#fdf6e3,#fff8ee);border-radius:18px;
-    padding:1.5rem 1.1rem;max-width:310px;width:100%;text-align:center;
+  .cert-card{background:linear-gradient(135deg,#fdf6e3,#fff8ee);border-radius:20px;
+    padding:1.6rem 1.2rem;max-width:330px;width:100%;text-align:center;
     border:3px solid #F4D35E;box-shadow:0 0 30px rgba(244,211,94,.12);position:relative}
-  .cert-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
-    background:#F4D35E;padding:.2rem .8rem;border-radius:14px;
-    font-size:.62rem;font-weight:700;color:#1a1a2e;letter-spacing:.08em;text-transform:uppercase}
-  .cert-card .emoji{font-size:1.8rem;margin-top:.3rem}
-  .cert-card h2{font-family:'Playfair Display',serif;font-size:.88rem;color:#1a1a2e;margin-top:.3rem;font-weight:700}
-  .cert-card .ct{font-size:.8rem;color:#555;margin-top:.6rem;line-height:1.5}
-  .cert-card .cn{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin:.15rem 0}
-  .cert-card .cb{font-size:.76rem;color:#555;line-height:1.6;margin-top:.2rem}
+  .cert-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    background:#F4D35E;padding:.22rem .9rem;border-radius:14px;
+    font-size:clamp(.65rem,1.8vw,.72rem);font-weight:700;color:#1a1a2e;letter-spacing:.08em;text-transform:uppercase}
+  .cert-card .emoji{font-size:2rem;margin-top:.4rem}
+  .cert-card h2{font-family:'Playfair Display',serif;font-size:clamp(.92rem,2.6vw,1rem);color:#1a1a2e;margin-top:.35rem;font-weight:700}
+  .cert-card .ct{font-size:clamp(.85rem,2.3vw,.92rem);color:#555;margin-top:.65rem;line-height:1.5}
+  .cert-card .cb{font-size:clamp(.82rem,2.2vw,.88rem);color:#555;line-height:1.6;margin-top:.25rem}
   .cert-card .cb strong{color:#1a1a2e}
-  .cert-card .cp{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;margin:.5rem 0}
-  .cert-card .cs{font-size:.68rem;color:#888}
-  .cert-card .cf{border-top:1px solid #ddd;margin-top:.6rem;padding-top:.5rem;font-size:.65rem;color:#999}
-  .cert-tip{font-size:.72rem;color:rgba(255,255,255,.4);margin-top:1rem;text-align:center}
-  .btn-back{font-family:'Source Sans 3',sans-serif;font-size:.82rem;font-weight:600;
-    padding:.5rem 1.3rem;border-radius:60px;border:2px solid rgba(255,255,255,.2);
-    background:transparent;color:#e0d5c1;cursor:pointer;margin-top:.7rem}
+  .cert-card .cp{font-family:'Playfair Display',serif;font-size:clamp(1rem,3vw,1.12rem);font-weight:700;margin:.55rem 0}
+  .cert-card .cs{font-size:clamp(.72rem,2vw,.78rem);color:#888}
+  .cert-card .cf{border-top:1px solid #ddd;margin-top:.65rem;padding-top:.5rem;font-size:clamp(.68rem,1.8vw,.72rem);color:#999}
+  .cert-tip{font-size:clamp(.78rem,2.2vw,.85rem);color:rgba(255,255,255,.4);margin-top:1.1rem;text-align:center}
+  .btn-back{font-family:'Source Sans 3',sans-serif;font-size:clamp(.88rem,2.5vw,.95rem);font-weight:600;
+    padding:.55rem 1.4rem;border-radius:60px;border:2px solid rgba(255,255,255,.2);
+    background:transparent;color:#e0d5c1;cursor:pointer;margin-top:.8rem}
 </style>
 </head>
 <body>
@@ -184,41 +191,52 @@
     <div class="phone-btn-l1"></div><div class="phone-btn-l2"></div><div class="phone-btn-l3"></div>
     <div class="phone-screen">
       <div class="phone-content" id="app">
+
         <div id="s-welcome" class="screen welcome active anim-in">
           <div class="welcome-emoji">💫</div>
           <h1>Memórias<br>Conectadas</h1>
           <div class="tagline">Quiz Tech • SENAC Tech</div>
-          <p class="subtitle">Teste seus conhecimentos digitais, aprenda e se divirta!<br><span>Leva só 3 minutinhos ☕</span></p>
+          <p class="subtitle">Teste seus conhecimentos digitais, aprenda e se divirta!<br><span>Leva só 2 minutinhos ☕</span></p>
           <div class="version-sel" id="ver-sel"></div>
           <button class="btn-play" onclick="startQuiz()">Vamos jogar! 🎉</button>
           <div class="stats-row">
             <div class="stat-pill"><div class="sn" id="st-played">0</div><div class="sl">partidas</div></div>
-            <div class="stat-pill"><div class="sn" id="st-avg">0%</div><div class="sl">média acertos</div></div>
+            <div class="stat-pill"><div class="sn" id="st-avg">—</div><div class="sl">média acertos</div></div>
           </div>
           <p class="footer">SENAC Tech • Inclusão Digital com Afeto</p>
         </div>
+
         <div id="s-quiz" class="screen quiz">
           <div>
-            <div class="progress-row"><span id="q-count">1 de 12</span><span id="q-tag"></span></div>
+            <div class="progress-row"><span id="q-count">1 de 8</span><span id="q-tag"></span></div>
             <div class="progress-track"><div id="prog-fill" class="progress-fill" style="width:0%"></div></div>
           </div>
           <div class="q-area" id="q-area"></div>
         </div>
+
         <div id="s-result" class="screen result"></div>
+
         <div id="s-cert" class="screen certificate">
           <div class="cert-card">
             <div class="cert-badge">Certificado</div>
             <span class="emoji">🏅</span>
             <h2>Certificado de Participação</h2>
-            <p class="ct">Certificamos que o(a) participante</p>
-            <p class="cb">completou o quiz<br><strong>Memórias Conectadas</strong><br>no SENAC Tech como</p>
+            <p class="ct">Certificamos que o(a) participante completou o quiz</p>
+            <p class="cb"><strong>Memórias Conectadas</strong><br>no SENAC Tech como</p>
             <p id="cert-prof" class="cp"></p>
             <p id="cert-sc" class="cs"></p>
             <div class="cf"><span id="cert-date"></span> • SENAC Tech</div>
           </div>
+          <div class="senac-cta" style="margin-top:1rem">
+            <p class="sc-title">🚀 Conheça nossos cursos</p>
+            <p class="sc-sub">Escaneie o QR Code abaixo!</p>
+            <div class="qr-wrap"><img id="cert-qr" alt="QR Code senacrs.com.br" style="width:110px;height:110px;border-radius:10px"></div>
+            <p class="sc-url">senacrs.com.br</p>
+          </div>
           <p class="cert-tip">📸 Tire um print e guarde!</p>
           <button class="btn-back" onclick="go('result')">← Voltar</button>
         </div>
+
       </div>
       <div class="phone-navbar"><span>⌂</span><span>🔍</span><span>⊕</span><span>📅</span><span>👤</span></div>
     </div>
@@ -226,233 +244,164 @@
 </div>
 
 <script>
-// ===== POLL OPTIONS (shared across all versions) =====
-const POLL_OPTS=["Editar fotos e vídeos","Apps de saúde e bem-estar","Comprar online com segurança","Redes sociais e comunicação"];
+const POLL_OPTS=["Editar fotos e vídeos","Apps de saúde","Compras online seguras","Redes sociais"];
 const POLL_COLORS=["#2E86AB","#A23B72","#F18F01","#C73E1D"];
+const QR_SRC="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbwAAAG8CAIAAAAq0oeIAAAI7ElEQVR4nO3d0ZHkuBFAQY1ivTgj5L8ZMuLsoDxY4cUhsAUy0wAOye55gZ/q+nme518ArPn3n74BgJuIJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAMGvXRf666//7LrUdf7++79brrPrHa7cz1s/r13PPu06K778ua/Y9X/qpAkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgDBttnzFbtmP0/aNatr5vf3Tr6fk/czbT59xZf/T1c4aQIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkBwdPZ8xVtnbG/cjb5i5X6m7fW+cbZ62j2/9f90hZMmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBONmz79s2o7sG2fzTzp5z2+dqb+RkyZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEZs9f6ORO85Oz8Ddexzz4+zhpAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQDBu9vyts7rT5rh3OXk/b30/K8817f9i2v2c5KQJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAwdHZ82lzwW+1a0b7xuusmPZcK06+H/+nv+ekCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAMHP8zx/+h4+4cb94F/ebT1t/vrLn8U0TpoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQHN17ftJbZ4enPde0vec3ztRPez8rTr7DaZ+pkyZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIER2fPp82Qrtg1z3ty5vet8+krpr0f9/PP/9a0JjhpAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQPDzPM+WC52cIZ22A/pGN34WX97rze/Zew4wlGgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQbJs9P+nGPdFfnoWftrd6xY2f6bTv6snfN1ix636cNAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyD4tetCZmzvus5J074b/HMnv6vTZvydNAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyDYNnu+4uQM6a4Z5LfOg684+VzT5otX3Ph7Al9+z7s4aQIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkDw8zzPlgudnBk/OfO7Ytfc67R3uMuN93PSjd/DL3+mTpoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQHN17vmLajuMvz9jucuN+8Gnz4Cum3fO035HY9VxOmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRAcnT3fNUNqBvmMk+9w13ue9tsFK26cT5/2P2jvOcBQogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkDw8zzPlgt9eUb75LNP2xN9cuf7ii9/f1ZM2yG+YlpbnDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgOLr3/KRp87xvdeNua3P3Z+x6z9Oey0kTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBgiv3nk/b/b3LjfPy03ZST5srn/b9mTbHvcvJZ3fSBAhEEyAQTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgGDc7PmKafO8K6bNeq+Ytvt72v3sMu25ps3mT/sfdNIECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2A4Ojs+Zd3Lq+48f1Me/aTe8/f+nlN+52Eae/ZSRMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAGCbbPnN5o2G3vjbusbn33FtFn4t5r2P7jCSRMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAECs+f/x64Z7V2mzSl/eWZ8l2m/A7Dixt8l2HU/TpoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQbJs9Pzkf+tZ5512mzerucuM8OL938j2bPQf4A0QTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2A4NN7z0+aNj+74q174aft7J52zyve+lwrnDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMg+LXrQl/eAf3lmd9pc9y7vPX7fOOs97R7dtIECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2AYNvs+YppM60rpu3sXjFtVnfazve3vucV0z73Xb9vcPKzcNIECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIRBMgEE2A4Ojs+YobZ713mTbLPO1+dpk2C7/LtF3t034rYBcnTYBANAEC0QQIRBMgEE2AQDQBAtEECEQTIBBNgEA0AQLRBAjGzZ6/1bRd27vmlE/Op+/6WyfvZ5cb73nFye+zvecAf4BoAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEJg9f6Fpe73fOu88bQf9Lid/u+DG3ehOmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCMmz0/OUM6zcndzSumzRevmLbPfdrM+Ipp73AaJ02AQDQBAtEECEQTIBBNgEA0AQLRBAhEEyAQTYBANAEC0QQIjs6eT9t/Pc2Ns8wr93NyBnna/PVbTftunPyOOWkCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQiCZA8PM8z5++B4BrOGkCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQiCZAIJoAgWgCBKIJEIgmQCCaAIFoAgSiCRCIJkAgmgCBaAIEogkQiCZA8D9hGOn1LoL3qwAAAABJRU5ErkJggg==";
 
-// ===== QUESTION BANK =====
 const BANK={
-  // --- shared pool ---
   s01:{f:"tf",e:"🔒",q:"\"Bancos podem pedir sua senha por telefone ou WhatsApp.\"",c:false,fc:"Perfeito! Nenhum banco pede senha assim. Se pedirem, é golpe!",fw:"Atenção: nenhum banco pede senha assim. Desligue na hora!",tip:"💡 Na dúvida, ligue para o número oficial do banco."},
-  s02:{f:"tf",e:"📶",q:"\"Wi-Fi público de shopping é seguro pra fazer Pix.\"",c:false,fc:"Isso! Wi-Fi público pode ser interceptado. Use 4G/5G pra banco.",fw:"Cuidado! Wi-Fi público pode ser interceptado. Use 4G/5G!",tip:"💡 Wi-Fi de casa com senha é seguro. Wi-Fi aberto, evite pra banco."},
-  s03:{f:"choice",e:"🔍",q:"Pra aumentar as letras do celular, onde você vai?",o:["Configurações > Tela > Tamanho da fonte","Ligar para a operadora","Apertar os dois lados da tela","Não tem como aumentar"],c:0,fc:"Ótimo! Letras grandes fazem toda a diferença!",fw:"É em Configurações > Tela > Tamanho da fonte!",tip:"💡 Peça ajuda no estande pra ajustar agora!"},
+  s02:{f:"tf",e:"📶",q:"\"Wi-Fi público é seguro pra fazer Pix.\"",c:false,fc:"Isso! Wi-Fi público pode ser interceptado. Use 4G/5G!",fw:"Cuidado! Wi-Fi público pode ser interceptado. Use 4G/5G!",tip:"💡 Wi-Fi de casa com senha é seguro. Wi-Fi aberto, evite pra banco."},
+  s03:{f:"choice",e:"🔍",q:"Pra aumentar as letras do celular, onde você vai?",o:["Configurações > Tela > Fonte","Ligar para a operadora","Apertar os dois lados da tela","Não tem como aumentar"],c:0,fc:"Ótimo! Letras grandes fazem toda a diferença!",fw:"É em Configurações > Tela > Tamanho da fonte!",tip:"💡 Peça ajuda no estande pra ajustar agora!"},
   s04:{f:"tf",e:"💸",q:"\"O Pix funciona 24 horas, até de madrugada e feriado.\"",c:true,fc:"Certíssimo! O Pix funciona a qualquer hora!",fw:"Sim! O Pix opera 24h, 7 dias, inclusive feriados.",tip:"💡 Configure um limite noturno de Pix no app do banco."},
-  s05:{f:"choice",e:"📱",q:"Qual a forma MAIS SEGURA de desbloquear o celular?",o:["Sem bloqueio","Desenho na tela","Senha com letras e números","Impressão digital ou rosto"],c:3,fc:"Mandou bem! Biometria é a mais segura e prática!",fw:"A mais segura é biometria (digital ou rosto)!",tip:"💡 Peça ajuda no estande pra ativar!"},
-  s06:{f:"tf",e:"🤳",q:"\"Links de WhatsApp de desconhecidos são seguros se parecem de empresas.\"",c:false,fc:"Exato! Golpistas imitam empresas reais. Não clique!",fw:"Cuidado! Links falsos imitam empresas. Nunca clique em links de desconhecidos!",tip:"💡 Promoção boa demais? Desconfie. Vá ao app oficial."},
-  s07:{f:"choice",e:"📸",q:"Tirou foto e quer mandar pelo WhatsApp. Como faz?",o:["Conversa > clipe 📎 > Galeria","Precisa de app especial","Só pelo WhatsApp direto","Não é possível"],c:0,fc:"Perfeito! O clipe 📎 é o atalho mágico!",fw:"Fácil! Abra a conversa, toque no clipe 📎 e escolha Galeria!",tip:"💡 Pelo 📎 você manda documentos e localização também!"},
-  s08:{f:"tf",e:"📲",q:"\"Dá pra apagar mensagem enviada errada no WhatsApp.\"",c:true,fc:"Isso! Segure a mensagem e toque 'Apagar para todos'!",fw:"Sim! Segure a mensagem e escolha 'Apagar para todos'!",tip:"💡 Funciona até 2 dias depois do envio."},
-  s09:{f:"choice",e:"🛡️",q:"Qual dessas senhas é a MAIS FORTE?",o:["123456","Maria2024","Ca$a@Bonita9!","senha"],c:2,fc:"Mandou bem! Misturar letras, números e símbolos é o segredo!",fw:"A mais forte é 'Ca$a@Bonita9!' — mistura tudo!",tip:"💡 Use frases: 'MeuNeto@Nasceu2015'"},
-  s10:{f:"tf",e:"🔋",q:"\"Precisa descarregar a bateria toda antes de carregar.\"",c:false,fc:"Perfeito! Mito dos celulares antigos. Hoje, carregue quando quiser!",fw:"Mito! Celulares modernos carregam a qualquer momento!",tip:"💡 Ideal: manter entre 20% e 80%."},
-  s11:{f:"choice",e:"🗣️",q:"Como fazer ligação de vídeo pelo WhatsApp?",o:["Abrir conversa > câmera 📹","Mandar mensagem pedindo","Só no computador","Precisa de app separado"],c:0,fc:"Excelente! A câmera 📹 no topo. Fácil e gratuito!",fw:"Simples! Abra a conversa e toque na câmera 📹 no topo!",tip:"💡 Usa internet, não crédito. Em Wi-Fi, é grátis!"},
-  s12:{f:"tf",e:"🏦",q:"\"Pelo celular você consulta saldo, extrato e faz Pix sem ir ao banco.\"",c:true,fc:"Certíssimo! O app do banco é a agência no bolso!",fw:"Sim! Os apps permitem tudo isso. Seguro e sem filas!",tip:"💡 Não tem o app? Peça ajuda pra instalar!"},
-  s13:{f:"choice",e:"🆘",q:"Se o celular travar, o que fazer PRIMEIRO?",o:["Jogar fora","Segurar botão de ligar por 10s","Bater no celular","Tirar a bateria"],c:1,fc:"Exato! Segurar o botão reinicia. Resolve quase tudo!",fw:"Segure o botão de ligar por 10 segundos. O celular reinicia!",tip:"💡 Se travar sempre, apague apps e fotos duplicadas."},
-  // --- extras for versions B and C ---
-  e01:{f:"tf",e:"🖨️",q:"\"Pra imprimir do celular, precisa conectar um cabo.\"",c:false,fc:"Não precisa! A maioria das impressoras conecta por Wi-Fi ou Bluetooth.",fw:"Hoje a maioria conecta sem fio! Wi-Fi ou Bluetooth direto do celular.",tip:"💡 Procure 'impressora' nas configurações do celular."},
-  e02:{f:"choice",e:"🔔",q:"Como silenciar o celular rapidamente?",o:["Apertar botão de volume até zerar","Jogar debaixo do travesseiro","Desligar o celular","Tirar o chip"],c:0,fc:"Isso! Botão de volume até o fim ou ativar 'Não Perturbe'!",fw:"Basta apertar o botão de volume lateral até zerar! Simples assim.",tip:"💡 O modo 'Não Perturbe' silencia tudo menos emergências."},
-  e03:{f:"tf",e:"📍",q:"\"O celular pode mostrar o caminho até qualquer endereço, como um GPS.\"",c:true,fc:"Exato! O Google Maps ou Waze fazem isso de graça!",fw:"Sim! Apps como Google Maps e Waze guiam você por voz, de graça!",tip:"💡 Funciona até sem internet se baixar o mapa antes."},
-  e04:{f:"choice",e:"📞",q:"Recebeu ligação do 'banco' pedindo pra instalar app. O que faz?",o:["Instala, afinal é o banco","Desliga e liga pro banco oficial","Passa os dados pedidos","Manda por WhatsApp os dados"],c:1,fc:"Perfeito! Sempre desligue e ligue você mesmo pro número oficial!",fw:"Nunca instale nada pedido por telefone! Desligue e ligue pro banco você mesmo.",tip:"💡 Bancos NUNCA pedem pra instalar apps por telefone."},
-  e05:{f:"tf",e:"🌐",q:"\"Se um site tem cadeado 🔒 na barra, é 100% seguro.\"",c:false,fc:"Boa! O cadeado significa conexão criptografada, não que o site é confiável.",fw:"O cadeado mostra criptografia, mas golpistas também usam! Verifique o endereço.",tip:"💡 Confira se o endereço está correto: bancodobrasil.com.br, não banc0brasil.com."},
-  e06:{f:"choice",e:"💾",q:"Suas fotos estão ocupando muito espaço. O que fazer?",o:["Jogar o celular fora","Passar fotos pro Google Fotos (nuvem)","Apagar todos os apps","Comprar celular novo"],c:1,fc:"Ótimo! Google Fotos salva na nuvem e libera espaço!",fw:"O Google Fotos salva suas fotos na nuvem e libera espaço do celular!",tip:"💡 'Nuvem' é como um HD online. Suas fotos ficam seguras mesmo se perder o celular."},
-  e07:{f:"tf",e:"🎤",q:"\"Você pode ditar mensagens de voz no WhatsApp em vez de digitar.\"",c:true,fc:"Isso! O microfone ao lado da caixa de texto grava áudio. Muito prático!",fw:"Sim! Segure o microfone e fale. Ótimo pra quem prefere não digitar!",tip:"💡 Também dá pra usar o teclado por voz: toque no microfone do teclado e dite."},
-  e08:{f:"choice",e:"⚙️",q:"O celular está muito lento. Qual a melhor solução?",o:["Colocar na geladeira","Fechar apps abertos e reiniciar","Dar um tapa na tela","Deixar descarregar"],c:1,fc:"Perfeito! Fechar apps e reiniciar resolve a maioria dos casos!",fw:"Feche os apps abertos e reinicie. Isso libera memória e acelera!",tip:"💡 Também ajuda: apagar apps que você não usa mais."},
-  e09:{f:"tf",e:"🛒",q:"\"Comprar pela internet é sempre perigoso e deve ser evitado.\"",c:false,fc:"Boa! Comprar online é seguro em sites confiáveis e com Pix ou cartão virtual!",fw:"Não! Em sites confiáveis é seguro. Use Pix ou cartão virtual pra mais proteção.",tip:"💡 Prefira lojas conhecidas e confira avaliações antes de comprar."},
-  e10:{f:"choice",e:"📋",q:"Como copiar um texto no celular?",o:["Segurar o dedo sobre o texto até selecionar","Tirar foto da tela","Ligar pra alguém e ditar","Não é possível copiar"],c:0,fc:"Isso! Segure, selecione e toque 'Copiar'. Depois 'Colar' onde quiser!",fw:"Segure o dedo sobre o texto, selecione e toque 'Copiar'!",tip:"💡 Funciona em quase todo lugar: WhatsApp, sites, e-mails."},
+  s05:{f:"choice",e:"📱",q:"Qual a forma MAIS SEGURA de desbloquear o celular?",o:["Sem bloqueio","Desenho na tela","Senha com letras e números","Impressão digital ou rosto"],c:3,fc:"Mandou bem! Biometria é a mais segura e prática!",fw:"A mais segura é biometria (digital ou rosto)!",tip:"💡 Peça ajuda pra ativar no estande!"},
+  s06:{f:"tf",e:"🤳",q:"\"Links de WhatsApp de desconhecidos são seguros se parecem de empresas.\"",c:false,fc:"Exato! Golpistas imitam empresas. Não clique!",fw:"Cuidado! Links falsos imitam empresas reais!",tip:"💡 Promoção boa demais? Desconfie."},
+  s07:{f:"choice",e:"📸",q:"Tirou foto e quer mandar pelo WhatsApp. Como faz?",o:["Conversa > clipe 📎 > Galeria","Precisa de app especial","Só tirando pelo WhatsApp","Não é possível"],c:0,fc:"Perfeito! O clipe 📎 é o atalho mágico!",fw:"Fácil! Toque no clipe 📎 e escolha Galeria!",tip:"💡 Pelo 📎 manda documentos e localização também!"},
+  s08:{f:"tf",e:"📲",q:"\"Dá pra apagar mensagem enviada errada no WhatsApp.\"",c:true,fc:"Isso! Segure e toque 'Apagar para todos'!",fw:"Sim! Segure e escolha 'Apagar para todos'!",tip:"💡 Funciona até 2 dias depois do envio."},
+  s09:{f:"choice",e:"🛡️",q:"Qual dessas senhas é a MAIS FORTE?",o:["123456","Maria2024","Ca$a@Bonita9!","senha"],c:2,fc:"Mandou bem! Misturar tudo é o segredo!",fw:"A mais forte é 'Ca$a@Bonita9!' — mistura tudo!",tip:"💡 Use frases: 'MeuNeto@Nasceu2015'"},
+  s10:{f:"tf",e:"🔋",q:"\"Precisa descarregar a bateria toda antes de carregar.\"",c:false,fc:"Mito dos celulares antigos. Hoje, carregue quando quiser!",fw:"Mito! Celulares modernos carregam a qualquer momento!",tip:"💡 Ideal: manter entre 20% e 80%."},
+  s11:{f:"choice",e:"🗣️",q:"Como fazer ligação de vídeo pelo WhatsApp?",o:["Conversa > tocar câmera 📹","Mandar mensagem pedindo","Só no computador","Precisa de app separado"],c:0,fc:"A câmera 📹 no topo. Fácil e gratuito!",fw:"Abra a conversa e toque na câmera 📹 no topo!",tip:"💡 Usa internet, não crédito!"},
+  s12:{f:"tf",e:"🏦",q:"\"Pelo celular você faz Pix, consulta saldo e extrato sem ir ao banco.\"",c:true,fc:"Certíssimo! O app do banco é a agência no bolso!",fw:"Sim! Os apps permitem tudo isso. Seguro e sem filas!",tip:"💡 Não tem o app? Peça ajuda pra instalar!"},
+  s13:{f:"choice",e:"🆘",q:"Celular travou. O que fazer PRIMEIRO?",o:["Jogar fora","Segurar botão de ligar por 10s","Bater no celular","Tirar a bateria"],c:1,fc:"Exato! Segurar o botão reinicia!",fw:"Segure o botão de ligar por 10 segundos!",tip:"💡 Trava sempre? Apague apps e fotos duplicadas."},
+  e01:{f:"tf",e:"🖨️",q:"\"Pra imprimir do celular, precisa conectar um cabo.\"",c:false,fc:"Não precisa! Conecta por Wi-Fi ou Bluetooth.",fw:"Hoje conecta sem fio! Wi-Fi ou Bluetooth direto.",tip:"💡 Procure 'impressora' nas configurações."},
+  e02:{f:"choice",e:"🔔",q:"Como silenciar o celular rapidamente?",o:["Botão de volume até zerar","Jogar debaixo do travesseiro","Desligar o celular","Tirar o chip"],c:0,fc:"Isso! Volume até o fim ou 'Não Perturbe'!",fw:"Aperte o botão de volume lateral até zerar!",tip:"💡 'Não Perturbe' silencia tudo menos emergências."},
+  e03:{f:"tf",e:"📍",q:"\"O celular mostra o caminho até qualquer endereço, como GPS.\"",c:true,fc:"Exato! Google Maps e Waze fazem isso de graça!",fw:"Sim! Apps de mapa guiam por voz, de graça!",tip:"💡 Funciona até sem internet se baixar o mapa antes."},
+  e04:{f:"choice",e:"📞",q:"Ligaram do 'banco' pedindo instalar um app. O que faz?",o:["Instala, é o banco","Desliga e liga pro banco oficial","Passa os dados","Manda por WhatsApp"],c:1,fc:"Perfeito! Desligue e ligue você mesmo!",fw:"Nunca instale nada pedido por telefone!",tip:"💡 Bancos NUNCA pedem pra instalar apps por telefone."},
+  e05:{f:"tf",e:"🌐",q:"\"Site com cadeado 🔒 é 100% seguro.\"",c:false,fc:"O cadeado é criptografia, não confiabilidade.",fw:"O cadeado mostra criptografia, mas golpistas também usam!",tip:"💡 Confira se o endereço está correto."},
+  e06:{f:"choice",e:"💾",q:"Fotos ocupando muito espaço. O que fazer?",o:["Jogar o celular fora","Salvar no Google Fotos (nuvem)","Apagar todos os apps","Comprar celular novo"],c:1,fc:"Ótimo! Google Fotos salva na nuvem!",fw:"Google Fotos salva na nuvem e libera espaço!",tip:"💡 'Nuvem' é um HD online. Seguro mesmo sem o celular."},
+  e07:{f:"tf",e:"🎤",q:"\"Você pode ditar mensagens no WhatsApp em vez de digitar.\"",c:true,fc:"O microfone grava áudio. Muito prático!",fw:"Sim! Segure o microfone e fale!",tip:"💡 Teclado por voz: toque no microfone do teclado."},
+  e08:{f:"choice",e:"⚙️",q:"Celular muito lento. Melhor solução?",o:["Colocar na geladeira","Fechar apps e reiniciar","Dar um tapa na tela","Deixar descarregar"],c:1,fc:"Fechar apps e reiniciar resolve quase tudo!",fw:"Feche os apps e reinicie. Libera memória!",tip:"💡 Também ajuda apagar apps que não usa."},
+  e09:{f:"tf",e:"🛒",q:"\"Comprar pela internet é sempre perigoso.\"",c:false,fc:"Em sites confiáveis é seguro! Use Pix ou cartão virtual.",fw:"Em sites confiáveis é seguro! Use cartão virtual.",tip:"💡 Prefira lojas conhecidas e veja avaliações."},
+  e10:{f:"choice",e:"📋",q:"Como copiar um texto no celular?",o:["Segurar o dedo sobre o texto","Tirar foto da tela","Ligar e ditar","Não é possível"],c:0,fc:"Segure, selecione e toque 'Copiar'!",fw:"Segure o dedo sobre o texto e toque 'Copiar'!",tip:"💡 Funciona em WhatsApp, sites, e-mails."},
 };
 
-// ===== 3 VERSIONS =====
-const VERSIONS = {
-  A: {
-    name: "Quiz A",
-    qs: ["s01","s03","s04","s05","s06","s08","s09","s10","s11","s12","s13"],
-  },
-  B: {
-    name: "Quiz B", 
-    qs: ["s02","e01","s05","e03","s07","e05","s09","e07","s12","s13","e04"],
-  },
-  C: {
-    name: "Quiz C",
-    qs: ["e02","s01","e06","s04","e08","s06","e09","s08","e10","s10","e04"],
-  },
+const VERSIONS={
+  A:{name:"Quiz A",qs:["s01","s03","s05","s08","s09","s11","s13"]},
+  B:{name:"Quiz B",qs:["s02","e01","e03","s07","e05","e07","e04"]},
+  C:{name:"Quiz C",qs:["e02","s04","e06","s06","e08","e09","e10"]},
 };
 
-// Final question (always last, same for all versions)
 const FINAL_Q={f:"poll",e:"🎓",q:"Se pudesse aprender algo novo sobre tecnologia, o que escolheria?",o:POLL_OPTS};
 
-// ===== PROFILES =====
 const PROFS=[
-  {n:"Guardião Digital",e:"🛡️",min:8,d:"Impressionante! Você domina o digital!",col:"#2E86AB",bg:"rgba(46,134,171,.12)",courses:["Segurança Digital Avançada","Marketing Digital","Excel no dia a dia"],msg:"Base excelente. O SENAC te leva além!"},
-  {n:"Explorador(a) Conectado(a)",e:"🧭",min:6,d:"Navega bem pelo digital! Mais umas dicas e voa!",col:"#A23B72",bg:"rgba(162,59,114,.12)",courses:["Smartphone Avançado","Internet Segura","Comunicação Digital"],msg:"Caminho certo! Um curso te dá asas."},
-  {n:"Curioso(a) de Primeira",e:"🔍",min:3,d:"Brilho de quem quer aprender! Cada erro virou lição.",col:"#F18F01",bg:"rgba(241,143,1,.12)",courses:["Inclusão Digital","WhatsApp sem Medo","Pix e Bancos Digitais"],msg:"Só o começo. O SENAC tem cursos gratuitos!"},
-  {n:"Semente Digital",e:"🌱",min:0,d:"Ter vindo já é o passo mais importante!",col:"#C73E1D",bg:"rgba(199,62,29,.12)",courses:["Primeiros Passos no Celular","Alfabetização Digital","WhatsApp Básico"],msg:"Erros ensinam! O SENAC te acompanha."},
+  {n:"Guardião Digital",e:"🛡️",min:6,d:"Impressionante! Você domina o digital!",col:"#2E86AB",bg:"rgba(46,134,171,.12)",courses:["Segurança Digital Avançada","Marketing Digital","Planilhas e Produtividade"],msg:"Você já tem uma base excelente. Vem evoluir ainda mais!"},
+  {n:"Explorador(a) Digital",e:"🧭",min:4,d:"Navega bem pelo digital! Mais umas dicas e voa!",col:"#A23B72",bg:"rgba(162,59,114,.12)",courses:["Smartphone Avançado","Internet Segura","Comunicação Digital"],msg:"Você está no caminho certo. Vem dar o próximo passo!"},
+  {n:"Curioso(a) Digital",e:"🔍",min:2,d:"Brilho de quem quer aprender! Cada erro virou lição.",col:"#F18F01",bg:"rgba(241,143,1,.12)",courses:["Inclusão Digital","WhatsApp sem Medo","Pix e Bancos Digitais"],msg:"Cada resposta de hoje foi um aprendizado. Continue essa jornada!"},
+  {n:"Semente Digital",e:"🌱",min:0,d:"Ter vindo já é o passo mais importante!",col:"#C73E1D",bg:"rgba(199,62,29,.12)",courses:["Primeiros Passos no Celular","Alfabetização Digital","WhatsApp Básico"],msg:"Erros são o melhor jeito de aprender. Vem com a gente!"},
 ];
 
-// ===== STATE =====
 let curVer="A",ci=0,qs=[],ts=0,tt=0,pk=null,prof=null;
 
-// ===== STORAGE =====
-function loadData(){
-  try{return JSON.parse(localStorage.getItem('mc_data'))||{played:0,totalScore:0,totalTech:0,poll:[0,0,0,0],profiles:{}};}
-  catch(e){return{played:0,totalScore:0,totalTech:0,poll:[0,0,0,0],profiles:{}};}
-}
-function saveData(d){try{localStorage.setItem('mc_data',JSON.stringify(d));}catch(e){}}
+function loadData(){try{return JSON.parse(localStorage.getItem('mc6'))||{played:0,totalScore:0,totalTech:0,poll:[0,0,0,0]};}catch(e){return{played:0,totalScore:0,totalTech:0,poll:[0,0,0,0]};}}
+function saveData(d){try{localStorage.setItem('mc6',JSON.stringify(d));}catch(e){}}
+function updateStats(){const d=loadData();document.getElementById('st-played').textContent=d.played;document.getElementById('st-avg').textContent=d.totalTech>0?Math.round(d.totalScore/d.totalTech*100)+'%':'—';}
 
-function updateStats(){
-  const d=loadData();
-  document.getElementById('st-played').textContent=d.played;
-  document.getElementById('st-avg').textContent=d.totalTech>0?Math.round(d.totalScore/d.totalTech*100)+'%':'—';
-}
-
-// ===== INIT =====
 function initVersions(){
-  const sel=document.getElementById('ver-sel');
-  sel.innerHTML='';
+  const sel=document.getElementById('ver-sel');sel.innerHTML='';
   Object.keys(VERSIONS).forEach(k=>{
-    const b=document.createElement('button');
-    b.className='v-btn'+(k===curVer?' sel':'');
-    b.textContent=VERSIONS[k].name;
-    b.onclick=()=>{curVer=k;initVersions();};
-    sel.appendChild(b);
+    const b=document.createElement('button');b.className='v-btn'+(k===curVer?' sel':'');
+    b.textContent=VERSIONS[k].name;b.onclick=()=>{curVer=k;initVersions();};sel.appendChild(b);
   });
 }
-initVersions();
-updateStats();
+initVersions();updateStats();
 
-// ===== NAV =====
 function go(id){
   document.querySelectorAll('.screen').forEach(s=>{s.classList.remove('active','anim-in')});
-  const el=document.getElementById('s-'+id);
-  el.classList.add('active');el.offsetHeight;el.classList.add('anim-in');
+  const el=document.getElementById('s-'+id);el.classList.add('active');el.offsetHeight;el.classList.add('anim-in');
   document.querySelector('.phone-content').scrollTop=0;
   if(id==='cert')renderCert();
 }
 
-// ===== QUIZ =====
 function startQuiz(){
-  const ver=VERSIONS[curVer];
-  qs=ver.qs.map(k=>({...BANK[k],_k:k}));
-  qs.push({...FINAL_Q,_k:'final'});
-  ci=0;ts=0;tt=0;pk=null;
-  go('quiz');renderQ();
+  qs=VERSIONS[curVer].qs.map(k=>({...BANK[k]}));
+  qs.push({...FINAL_Q});
+  ci=0;ts=0;tt=0;pk=null;go('quiz');renderQ();
 }
 
 function renderQ(){
-  const q=qs[ci],a=document.getElementById('q-area');
-  const total=qs.length;
+  const q=qs[ci],a=document.getElementById('q-area'),total=qs.length;
   document.getElementById('q-count').textContent=(ci+1)+' de '+total;
   document.getElementById('prog-fill').style.width=(ci/total*100)+'%';
   const tg=document.getElementById('q-tag');
   if(q.f==='tf'){tg.textContent='✅ Certo ou Errado';tg.style.color='#9BF0A0';}
-  else if(q.f==='poll'){tg.textContent='📊 Enquete';tg.style.color='#F4D35E';}
+  else if(q.f==='poll'){tg.textContent='📊 Sua opinião';tg.style.color='#F4D35E';}
   else{tg.textContent='💡 Desafio Tech';tg.style.color='#7EC8E3';}
   pk=null;
   let bc=q.f==='tf'?'badge-tf':(q.f==='poll'?'badge-poll':'badge-tech');
   let bt=q.f==='tf'?'✅ Certo ou Errado?':(q.f==='poll'?'📊 Sua opinião!':'💡 Desafio Tech');
-  let h='<div style="text-align:center;margin-bottom:.8rem">';
+  let h='<div style="text-align:center;margin-bottom:.9rem">';
   h+='<span class="q-badge '+bc+'">'+bt+'</span>';
   h+='<span class="q-emoji">'+q.e+'</span>';
   h+='<div class="q-text">'+q.q+'</div></div>';
   if(q.f==='tf'){
     h+='<div class="tf-row">';
     h+='<button class="tf" data-v="true" onclick="pickTF(true)"><span class="tf-icon">✅</span>Certo</button>';
-    h+='<button class="tf" data-v="false" onclick="pickTF(false)"><span class="tf-icon">❌</span>Errado</button>';
-    h+='</div>';
+    h+='<button class="tf" data-v="false" onclick="pickTF(false)"><span class="tf-icon">❌</span>Errado</button></div>';
   }else{
-    h+='<div class="opts">';
-    q.o.forEach((o,i)=>{h+='<button class="opt" data-i="'+i+'" onclick="pickOpt('+i+')">'+o+'</button>';});
-    h+='</div>';
+    h+='<div class="opts">';q.o.forEach((o,i)=>{h+='<button class="opt" data-i="'+i+'" onclick="pickOpt('+i+')">'+o+'</button>';});h+='</div>';
   }
-  a.style.opacity=0;
-  setTimeout(()=>{a.innerHTML=h;a.style.opacity=1;},180);
+  a.style.opacity=0;setTimeout(()=>{a.innerHTML=h;a.style.opacity=1;},180);
 }
 
 function pickOpt(i){
-  if(pk!==null)return;pk=i;
-  const q=qs[ci];
+  if(pk!==null)return;pk=i;const q=qs[ci];
   document.querySelectorAll('.opt').forEach(b=>{b.classList.add('locked');if(parseInt(b.dataset.i)===i)b.classList.add('picked');});
-  if(q.f==='poll'){
-    // Save poll answer
-    const d=loadData();d.poll[i]++;saveData(d);
-    setTimeout(next,500);
-  }else if(q.c!==null&&q.c!==undefined){
+  if(q.f==='poll'){const d=loadData();d.poll[i]++;saveData(d);setTimeout(next,500);}
+  else if(q.c!==null&&q.c!==undefined){
     tt++;const ok=i===q.c;if(ok)ts++;
-    document.querySelectorAll('.opt').forEach(b=>{
-      const bi=parseInt(b.dataset.i);
-      if(bi===q.c)b.classList.add('correct');
-      if(bi===i&&!ok)b.classList.add('wrong');
-      if(bi===q.c&&bi!==i)b.classList.add('right-answer');
-    });
+    document.querySelectorAll('.opt').forEach(b=>{const bi=parseInt(b.dataset.i);if(bi===q.c)b.classList.add('correct');if(bi===i&&!ok)b.classList.add('wrong');if(bi===q.c&&bi!==i)b.classList.add('right-answer');});
     setTimeout(()=>showFB(q,ok),700);
   }else{setTimeout(next,500);}
 }
 
 function pickTF(v){
-  if(pk!==null)return;pk=v;
-  const q=qs[ci];tt++;const ok=v===q.c;if(ok)ts++;
-  document.querySelectorAll('.tf').forEach(b=>{
-    b.classList.add('locked');const bv=b.dataset.v==='true';
-    if(bv===v&&ok)b.classList.add('correct');
-    if(bv===v&&!ok)b.classList.add('wrong');
-    if(bv===q.c&&!ok)b.classList.add('was-right');
-  });
+  if(pk!==null)return;pk=v;const q=qs[ci];tt++;const ok=v===q.c;if(ok)ts++;
+  document.querySelectorAll('.tf').forEach(b=>{b.classList.add('locked');const bv=b.dataset.v==='true';
+    if(bv===v&&ok)b.classList.add('correct');if(bv===v&&!ok)b.classList.add('wrong');if(bv===q.c&&!ok)b.classList.add('was-right');});
   setTimeout(()=>showFB(q,ok),700);
 }
 
 function showFB(q,ok){
   const a=document.getElementById('q-area');
-  let h='<div class="fb-card '+(ok?'ok':'nok')+'">';
-  h+='<div class="fb-emoji">'+(ok?'🎉':'💡')+'</div>';
+  let h='<div class="fb-card '+(ok?'ok':'nok')+'"><div class="fb-emoji">'+(ok?'🎉':'💡')+'</div>';
   h+='<div class="fb-title">'+(ok?'Muito bem!':'Agora você sabe!')+'</div>';
   h+='<div class="fb-text">'+(ok?q.fc:q.fw)+'</div>';
   if(q.tip)h+='<div class="fb-tip">'+q.tip+'</div>';
   h+='</div><div style="text-align:center"><button class="btn-next" onclick="next()">Próxima →</button></div>';
-  a.style.opacity=0;
-  setTimeout(()=>{a.innerHTML=h;a.style.opacity=1;},250);
+  a.style.opacity=0;setTimeout(()=>{a.innerHTML=h;a.style.opacity=1;},250);
 }
 
 function next(){ci++;if(ci>=qs.length)finish();else renderQ();}
 
-// ===== RESULT =====
 function finish(){
   document.getElementById('prog-fill').style.width='100%';
   for(const p of PROFS){if(ts>=p.min){prof=p;break;}}
-  // Save results
-  const d=loadData();
-  d.played++;d.totalScore+=ts;d.totalTech+=tt;
-  d.profiles[prof.n]=(d.profiles[prof.n]||0)+1;
-  saveData(d);updateStats();
-  // Build poll chart
-  const poll=d.poll;const pollTotal=poll.reduce((a,b)=>a+b,0);
+  const d=loadData();d.played++;d.totalScore+=ts;d.totalTech+=tt;saveData(d);updateStats();
+  const poll=d.poll,pollTotal=poll.reduce((a,b)=>a+b,0);
   let pollH='<div class="poll-box"><p class="pb-title">📊 O que as pessoas querem aprender</p>';
   POLL_OPTS.forEach((opt,i)=>{
     const pct=pollTotal>0?Math.round(poll[i]/pollTotal*100):0;
-    pollH+='<div class="poll-bar-row">';
-    pollH+='<span class="poll-label">'+opt.split(' ').slice(0,3).join(' ')+'</span>';
+    pollH+='<div class="poll-bar-row"><span class="poll-label">'+opt+'</span>';
     pollH+='<div class="poll-track"><div class="poll-fill" style="width:'+pct+'%;background:'+POLL_COLORS[i]+'"></div></div>';
-    pollH+='<span class="poll-val">'+poll[i]+'</span>';
-    pollH+='</div>';
+    pollH+='<span class="poll-val">'+poll[i]+'</span></div>';
   });
-  pollH+='<p class="poll-total">'+pollTotal+' votos no total</p></div>';
+  pollH+='<p class="poll-total">'+pollTotal+' votos</p></div>';
 
   let h='<div class="result-emoji">'+prof.e+'</div>';
   h+='<p class="result-sub">Seu perfil:</p>';
   h+='<h1 style="color:'+prof.col+'">'+prof.n+'</h1>';
-  h+='<div class="result-score" style="background:'+prof.bg+';color:'+prof.col+'">Acertou '+ts+' de '+tt+' perguntas tech!</div>';
-  h+='<p class="result-desc">'+prof.d+'</p>';
+  h+='<div class="result-score" style="background:'+prof.bg+';color:'+prof.col+'">Acertou '+ts+' de '+tt+' perguntas!</div>';
   h+=pollH;
-  h+='<div class="course-box"><p class="cb-title">🎓 '+prof.msg+'</p>';
-  prof.courses.forEach(c=>{h+='<div class="cb-item">'+c+'</div>';});
-  h+='</div>';
   h+='<button class="btn-cert" style="background:linear-gradient(135deg,'+prof.col+','+prof.col+'cc);box-shadow:0 6px 20px '+prof.col+'33" onclick="go(\'cert\')">🏅 Meu Certificado</button>';
   h+='<button class="btn-restart" onclick="go(\'welcome\')">↻ Jogar novamente</button>';
-  document.getElementById('s-result').innerHTML=h;
-  go('result');
+  document.getElementById('s-result').innerHTML=h;go('result');
 }
 
 function renderCert(){
   document.getElementById('cert-prof').textContent=prof.e+' '+prof.n;
   document.getElementById('cert-prof').style.color=prof.col;
-  document.getElementById('cert-sc').textContent='Acertou '+ts+' de '+tt+' desafios tecnológicos';
+  document.getElementById('cert-sc').textContent='Acertou '+ts+' de '+tt+' desafios';
   document.getElementById('cert-date').textContent=new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
+  document.getElementById('cert-qr').src=QR_SRC;
 }
 </script>
 </body>
